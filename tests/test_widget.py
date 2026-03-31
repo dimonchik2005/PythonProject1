@@ -2,7 +2,6 @@ import pytest
 
 from src.widget import get_date, mask_account_card
 
-
 @pytest.mark.parametrize(
     "data, expected",
     [
@@ -37,3 +36,4 @@ def test_get_date_valid(date_string: str, expected: str) -> None:
 def test_get_date_invalid_format() -> None:
     with pytest.raises(ValueError):
         get_date("invalid-date")
+
