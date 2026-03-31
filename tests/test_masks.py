@@ -35,8 +35,3 @@ def test_get_mask_account_valid(account_number: str, expected: str) -> None:
 def test_get_mask_account_invalid() -> None:
     with pytest.raises(ValueError):
         get_mask_account("123")
-
-
-
-
-

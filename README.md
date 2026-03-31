@@ -18,3 +18,12 @@
 1. Клонировать репозиторий:
 ```bash
 git clone https://github.com/dimonchik2005/PythonProject1.git
+```
+
+## Тестирование
+
+Для запуска тестов выполните команду:
+
+```bash
+poetry run pytest
+```
