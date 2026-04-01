@@ -27,3 +27,18 @@ git clone https://github.com/dimonchik2005/PythonProject1.git
 ```bash
 poetry run pytest
 ```
+
+## Модуль generators
+
+Добавлен модуль `generators`, содержащий генераторы для работы с транзакциями.
+
+### Функции
+
+**filter_by_currency**  
+Возвращает генератор транзакций с указанной валютой.
+
+Пример:
+```python
+usd_transactions = filter_by_currency(transactions, "USD")
+print(next(usd_transactions))
+```
