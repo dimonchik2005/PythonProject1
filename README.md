@@ -27,3 +27,31 @@ git clone https://github.com/dimonchik2005/PythonProject1.git
 ```bash
 poetry run pytest
 ```
+## Модуль decorators
+
+Модуль `decorators` содержит декоратор `log`, который логирует результат выполнения функции.
+
+Если передан параметр `filename`, лог записывается в файл.  
+Если `filename` не передан, лог выводится в консоль.
+
+Пример:
+
+```python
+from src.decorators import log
+
+
+@log(filename="mylog.txt")
+def add(x: int, y: int) -> int:
+    return x + y
+
+
+add(1, 2)
+```
+Результат при успешном выполнении:
+```bash
+add ok
+```
+Результат при ошибке:
+```
+add error: ZeroDivisionError. Inputs: (1, 0), {}
+```
