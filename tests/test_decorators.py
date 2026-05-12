@@ -1,7 +1,9 @@
+from pathlib import Path
+
 import pytest
 
-from pathlib import Path
 from src.decorators import log
+
 
 def test_log_console_success(capsys: pytest.CaptureFixture[str]) -> None:
     @log()
@@ -27,6 +29,7 @@ def test_log_console_error(capsys: pytest.CaptureFixture[str]) -> None:
 
     assert "divide error: ZeroDivisionError" in captured.out
     assert "Inputs: (1, 0), {}" in captured.out
+
 
 def test_log_file_success(tmp_path: Path) -> None:
     log_file = tmp_path / "test_log.txt"
