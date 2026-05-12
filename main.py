@@ -1,18 +1,10 @@
-from src.masks import get_mask_account, get_mask_card_number
+from src.file_readers import (
+    read_transactions_from_csv,
+    read_transactions_from_excel,
+)
 
+csv_data = read_transactions_from_csv("data/transactions.csv")
+excel_data = read_transactions_from_excel("data/transactions_excel.xlsx")
 
-def main() -> None:
-    choice = input("Что замаскировать? (card/account): ").strip().lower()
-
-    if choice == "card":
-        number = input("Введите номер карты: ").strip()
-        print(get_mask_card_number(number))
-    elif choice == "account":
-        number = input("Введите номер счета: ").strip()
-        print(get_mask_account(number))
-    else:
-        print("Неверный выбор. Введите card или account.")
-
-
-if __name__ == "__main__":
-    main()
+print(csv_data[:2])
+print(excel_data[:2])

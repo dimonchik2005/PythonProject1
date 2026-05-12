@@ -55,3 +55,14 @@ add ok
 ```
 add error: ZeroDivisionError. Inputs: (1, 0), {}
 ```
+## Чтение CSV- и Excel-файлов
+
+Добавлен модуль `file_readers`, который позволяет считывать финансовые операции из CSV- и Excel-файлов.
+
+### CSV
+
+```python
+from src.file_readers import read_transactions_from_csv
+
+transactions = read_transactions_from_csv("data/transactions.csv")
+```
