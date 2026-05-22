@@ -55,3 +55,31 @@ add ok
 ```
 add error: ZeroDivisionError. Inputs: (1, 0), {}
 ```
+## Чтение CSV- и Excel-файлов
+
+Добавлен модуль `file_readers`, который позволяет считывать финансовые операции из CSV- и Excel-файлов.
+
+### CSV
+
+```python
+from src.file_readers import read_transactions_from_csv
+
+transactions = read_transactions_from_csv("data/transactions.csv")
+```
+## Поиск и анализ операций
+
+Добавлен модуль `search`.
+
+### Возможности
+
+- поиск банковских операций по описанию с использованием регулярных выражений;
+- подсчёт количества операций по категориям с помощью `Counter`;
+- добавлена функция `main`, которая связывает чтение данных, фильтрацию, сортировку и поиск.
+
+### Пример поиска
+
+```python
+from src.search import process_bank_search
+
+result = process_bank_search(transactions, "Перевод")
+```
